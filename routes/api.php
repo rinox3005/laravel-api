@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('api')->group(function () {
-    Route::get('projects', [ProjectController::class, 'index']);
-});
+// Route::middleware('api')->group(function () {
+//     Route::get('projects', [ProjectController::class, 'index']);
+// });
+
+Route::apiResource('projects', ProjectController::class)->parameters([
+    'projects' => 'project:slug',
+]);
