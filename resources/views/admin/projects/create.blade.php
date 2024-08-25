@@ -102,7 +102,7 @@
                                 id="technology-{{ $technology->id }}"
                                 name="technologies[]"
                                 value="{{ $technology->id }}"
-                                {{ in_array($technology->id, old("technologies", $project->technologies)) ? "checked" : "" }}
+                                {{ in_array($technology->id, old("technologies", $project->technologies ?? [])) ? "checked" : "" }}
                             />
                             <label
                                 class="btn btn-outline-primary mb-1"
